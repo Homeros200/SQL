@@ -1,0 +1,15 @@
+--Aggregate Functions
+
+SELECT 
+customer_id,
+count(*) AS total_nr_orders,
+SUM(sales) AS total_sales,
+AVG(sales) AS avg_sales,
+MAX(sales) AS highest_sales,
+min(sales) AS lowest_sales
+FROM orders
+GROUP BY customer_id
+
+
+
+
