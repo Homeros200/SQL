@@ -1,15 +1,12 @@
 USE SalesDB
--- Find female employees whose salaries are greater
--- than the salaries of any male employees
+-- Show All Customer Details and find the total orders of each customer
 
---Main Query
 SELECT
-EmployeeID,
-FirstName,
-Salary
-FROM Sales.Employees
-WHERE Gender = 'F'
-AND Salary > ANY (SELECT Salary FROM Sales.Employees WHERE Gender = 'M')
+*,(SELECT COUNT(*) FROM Sales.Orders o WHERE o.CustomerID = c.CustomerID) TotalSales
+FROM Sales.Customers c
+
+
+
 
 
 
